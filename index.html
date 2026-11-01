@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KidKalc</title>
+  <meta name="description" content="A visual calculator for kids: see the answer with dots, carrots, baseballs and flowers.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <h1 class="logo">Kid<span>Kalc</span></h1>
+    <p class="mode">Basic Mode · numbers 1 to 12</p>
+  </header>
+
+  <main class="app">
+    <section class="panel">
+      <h2 class="label">Pick your things</h2>
+      <div class="chips" id="itemPicker" role="radiogroup" aria-label="Pick your things"></div>
+    </section>
+
+    <section class="panel problem" aria-label="Make a problem">
+      <div class="stepper" data-key="a">
+        <button class="step" data-dir="1" aria-label="First number up">▲</button>
+        <output class="num" id="numA">3</output>
+        <button class="step" data-dir="-1" aria-label="First number down">▼</button>
+      </div>
+
+      <div class="ops" id="opPicker" role="radiogroup" aria-label="Pick what to do"></div>
+
+      <div class="stepper" data-key="b">
+        <button class="step" data-dir="1" aria-label="Second number up">▲</button>
+        <output class="num" id="numB">4</output>
+        <button class="step" data-dir="-1" aria-label="Second number down">▼</button>
+      </div>
+
+      <button class="equals" id="goBtn" aria-label="Show me">
+        <span class="eq-sign">=</span>
+        <span class="eq-word">Show me!</span>
+      </button>
+    </section>
+
+    <section class="helper">
+      <div class="owl" aria-hidden="true">🦉</div>
+      <p class="bubble" id="story" aria-live="polite"></p>
+    </section>
+
+    <section class="stage" id="stage" aria-live="polite"></section>
+
+    <section class="actions">
+      <button class="btn reveal" id="revealBtn" hidden>Show the answer!</button>
+      <button class="btn ghost-btn" id="replayBtn" hidden>↻ Watch again</button>
+    </section>
+
+    <section class="answer" id="answer" hidden></section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
